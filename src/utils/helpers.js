@@ -14,3 +14,18 @@ export const fetchTransferEvents = (token, wallet, option) => {
     toBlock: 'latest'
   })
 }
+
+export const getDecimals = (token) => {
+  const contract = new web3Instance.eth.Contract(erc20Abi, token.toLowerCase().trim());
+  return contract.methods.decimals().call()
+}
+export const getUnit = (decimals) => {
+  let decimalString = "1".padEnd(Number(decimals)+1,'0');
+  let { unitMap } = Web3.utils;
+  let unit = Object.keys(unitMap).find((k) => unitMap[k] === decimalString);
+  return unit;
+}
+
+export const fromWei = (value, decimals) => {
+  return Web3.utils.fromWei(value, getUnit(decimals));
+}
