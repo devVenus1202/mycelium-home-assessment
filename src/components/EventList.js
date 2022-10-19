@@ -10,9 +10,9 @@ const EventItem = ({event}) => {
 }
 const EventList = ({events}) => {
   if (!events || events.length === 0 )
-  return (
-    <div className="no-data">No transfer event</div>
-  )
+    return (
+      <div className="no-data">No transfer event</div>
+    )
   return (
     <div className="event-table">
       <div className="t-row t-header">

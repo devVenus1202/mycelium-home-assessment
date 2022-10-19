@@ -3,7 +3,7 @@ import './App.css';
 import EventList from './components/EventList';
 import FetchForm from './components/FetchForm';
 import Loader from './components/Loader';
-import {fetchTransferEvents} from "./utils/helpers";
+import {fetchTransferEvents} from './utils/helpers';
 
 function App() {
   const [events, setEvents] = useState(null);
@@ -11,7 +11,7 @@ function App() {
   const fetchEvents = (filter) => {
     setLoading(true);
     fetchTransferEvents(filter.tokenAddress, filter.walletAddress, filter.option).then(results => {
-      setEvents(results)
+      setEvents(results);
       setLoading(false);
     });
   }

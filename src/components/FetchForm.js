@@ -7,7 +7,7 @@ const FetchForm = (props) => {
     e.preventDefault();
     if (!walletAddress || !tokenAddress) return;
     if (props.onFetch) {
-      props.onFetch({tokenAddress, walletAddress, option})
+      props.onFetch({tokenAddress, walletAddress, option});
     }
   }
   const handleChangeToken = (e) => {
